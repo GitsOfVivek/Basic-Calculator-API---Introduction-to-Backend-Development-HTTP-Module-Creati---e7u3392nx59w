@@ -134,7 +134,7 @@ app.post('/divide', (req, res) => {
 		if (num2 === 0) {
 			return res.status(200).send({
 				status: 'error',
-				message: 'Invalid data types',
+				message: 'Cannot divide by zero',
 			});
 		}
 		if (
