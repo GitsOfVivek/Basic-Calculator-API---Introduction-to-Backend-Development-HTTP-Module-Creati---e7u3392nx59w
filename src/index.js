@@ -18,7 +18,7 @@ app.post('/add', (req, res) => {
 	try {
 		const { num1, num2 } = req.body;
 		if (typeof num1 === 'string' || typeof num1 === 'string') {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Invalid data types',
 			});
@@ -28,13 +28,13 @@ app.post('/add', (req, res) => {
 			num2 < -10_000_00 ||
 			num1 + num2 < -10_000_00
 		) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Underflow',
 			});
 		}
 		if (num1 > 10_000_00 || num2 > 10_000_00 || num1 + num2 > 10_000_00) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Overflow',
 			});
@@ -54,7 +54,7 @@ app.post('/sub', (req, res) => {
 	try {
 		const { num1, num2 } = req.body;
 		if (typeof num1 === 'string' || typeof num1 === 'string') {
-			return res.status(400).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Invalid data types',
 			});
@@ -64,13 +64,13 @@ app.post('/sub', (req, res) => {
 			num2 < -10_000_00 ||
 			num1 - num2 < -10_000_00
 		) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Underflow',
 			});
 		}
 		if (num1 > 10_000_00 || num2 > 10_000_00 || num1 - num2 > 10_000_00) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Overflow',
 			});
@@ -90,7 +90,7 @@ app.post('/multiply', (req, res) => {
 	try {
 		const { num1, num2 } = req.body;
 		if (typeof num1 === 'string' || typeof num1 === 'string') {
-			return res.status(400).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Invalid data types',
 			});
@@ -100,13 +100,13 @@ app.post('/multiply', (req, res) => {
 			num2 < -10_000_00 ||
 			num1 * num2 < -10_000_00
 		) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Underflow',
 			});
 		}
 		if (num1 > 10_000_00 || num2 > 10_000_00 || num1 * num2 > 10_000_00) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Overflow',
 			});
@@ -126,13 +126,13 @@ app.post('/divide', (req, res) => {
 	try {
 		const { num1, num2 } = req.body;
 		if (typeof num1 === 'string' || typeof num1 === 'string') {
-			return res.status(400).send({
+			return res.status(200).send({
 				status: 'success',
 				message: 'Invalid data types',
 			});
 		}
 		if (num2 === 0) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Invalid data types',
 			});
@@ -142,13 +142,13 @@ app.post('/divide', (req, res) => {
 			num2 < -10_000_00 ||
 			num1 / num2 < -10_000_00
 		) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Underflow',
 			});
 		}
 		if (num1 > 10_000_00 || num2 > 10_000_00 || num1 / num2 > 10_000_00) {
-			return res.status(404).send({
+			return res.status(200).send({
 				status: 'error',
 				message: 'Overflow',
 			});
