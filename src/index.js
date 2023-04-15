@@ -78,7 +78,7 @@ app.post('/sub', (req, res) => {
 		res.status(200).json({
 			status: 'success',
 			message: 'the difference of given two numbers',
-			sum: num1 - num2,
+			difference: num1 - num2,
 		});
 	} catch (err) {
 		res.status(404).send({
@@ -114,7 +114,7 @@ app.post('/multiply', (req, res) => {
 		res.status(200).json({
 			status: 'success',
 			message: 'The product of given numbers',
-			sum: num1 * num2,
+			result: num1 * num2,
 		});
 	} catch (err) {
 		res.status(404).send({
@@ -156,7 +156,7 @@ app.post('/divide', (req, res) => {
 		res.status(200).json({
 			status: 'success',
 			message: 'The division of given numbers',
-			sum: num1 / num2,
+			result: num1 / num2,
 		});
 	} catch (err) {
 		res.status(404).send({
